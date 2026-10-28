@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AeroLuxe — a modern flight booking experience for your next journey.">
+  <title>AeroLuxe — Find Your Next Flight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="AeroLuxe home"><span class="brand-mark">✦</span><span>Aero<span class="brand-light">Luxe</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="active" href="#flights">Flights</a><a href="#destinations">Explore</a><a href="#why-us">Why AeroLuxe</a>
+    </nav>
+    <div class="header-actions"><button class="text-button" id="helpBtn">Help</button><button class="sign-in" id="signInBtn">Sign in <span>↗</span></button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
+  </header>
+
+  <main>
+    <section class="hero" id="flights">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR JOURNEY, REIMAGINED</div>
+        <h1>The world is<br><em>closer than ever.</em></h1>
+        <p class="hero-copy">Find the right flight, at the right price.<br class="desktop-only"> Your next great story starts here.</p>
+        <div class="hero-stats"><div><strong>200+</strong><span>Destinations</span></div><div><strong>80+</strong><span>Airline partners</span></div><div><strong>24/7</strong><span>Travel support</span></div></div>
+      </div>
+      <div class="hero-note"><span class="note-line"></span><span>MADE FOR THE WAY YOU TRAVEL</span></div>
+    </section>
+
+    <section class="booking-wrap" aria-label="Flight search">
+      <div class="booking-card">
+        <div class="booking-top">
+          <div class="trip-tabs" role="tablist" aria-label="Trip type">
+            <button class="trip-tab selected" data-trip="round" role="tab" aria-selected="true">↔ Round trip</button>
+            <button class="trip-tab" data-trip="oneway" role="tab" aria-selected="false">→ One way</button>
+            <button class="trip-tab" data-trip="multi" role="tab" aria-selected="false">＋ Multi-city</button>
+          </div>
+          <div class="cabin-control"><span>Cabin class</span><select id="cabin"><option>Economy</option><option>Premium Economy</option><option>Business</option><option>First Class</option></select></div>
+        </div>
+        <form id="flightForm">
+          <div class="route-grid">
+            <label class="field location-field"><span class="field-label">FROM</span><span class="field-main"><span class="field-icon">⌁</span><input id="from" name="from" value="Hyderabad (HYD)" required autocomplete="off" aria-label="Departure city"></span><small>Rajiv Gandhi International</small></label>
+            <button type="button" id="swapBtn" class="swap-btn" aria-label="Swap departure and destination">⇄</button>
+            <label class="field location-field"><span class="field-label">TO</span><span class="field-main"><span class="field-icon">⌖</span><input id="to" name="to" value="New Delhi (DEL)" required autocomplete="off" aria-label="Arrival city"></span><small>Indira Gandhi International</small></label>
+            <label class="field"><span class="field-label">DEPARTURE</span><span class="field-main"><span class="field-icon">▦</span><input id="depart" type="date" required aria-label="Departure date"></span><small>Choose your departure</small></label>
+            <label class="field return-field"><span class="field-label">RETURN</span><span class="field-main"><span class="field-icon">▦</span><input id="return" type="date" aria-label="Return date"></span><small id="returnHint">Add your return date</small></label>
+            <label class="field"><span class="field-label">TRAVELLERS</span><span class="field-main"><span class="field-icon">♙</span><select id="travellers" aria-label="Number of travellers"><option value="1">1 Traveller</option><option value="2" selected>2 Travellers</option><option value="3">3 Travellers</option><option value="4">4 Travellers</option><option value="5">5 Travellers</option><option value="6">6 Travellers</option><option value="7">7 Travellers</option><option value="8">8 Travellers</option><option value="9">9 Travellers</option></select></span><small>Adults and children</small></label>
+          </div>
+          <div class="form-bottom"><label class="checkbox-label"><input type="checkbox" id="directOnly"><span class="custom-check"></span> Direct flights only</label><button class="search-btn" type="submit">Search flights <span>↗</span></button></div>
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="destinations section" id="destinations">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">A LITTLE INSPIRATION</div><h2>Where to <em>next?</em></h2></div><a class="view-all" href="#flight-deals">Discover all destinations <span>↗</span></a></div>
+      <div class="destination-grid">
+        <article class="destination-card destination-bali"><div class="destination-overlay"></div><div class="destination-top"><span class="destination-tag">TROPICAL ESCAPE</span><span class="round-arrow">↗</span></div><div class="destination-info"><span class="destination-country">INDONESIA</span><h3>Bali</h3><div class="destination-bottom"><span>Temples, tides & tranquility</span><strong>From ₹12,499*</strong></div></div></article>
+        <article class="destination-card destination-paris"><div class="destination-overlay"></div><div class="destination-top"><span class="destination-tag">CITY OF LIGHTS</span><span class="round-arrow">↗</span></div><div class="destination-info"><span class="destination-country">FRANCE</span><h3>Paris</h3><div class="destination-bottom"><span>Art, cafés & romance</span><strong>From ₹28,999*</strong></div></div></article>
+        <article class="destination-card destination-dubai"><div class="destination-overlay"></div><div class="destination-top"><span class="destination-tag">MODERN MARVEL</span><span class="round-arrow">↗</span></div><div class="destination-info"><span class="destination-country">UNITED ARAB EMIRATES</span><h3>Dubai</h3><div class="destination-bottom"><span>Desert dreams & skylines</span><strong>From ₹8,999*</strong></div></div></article>
+      </div>
+      <p class="price-note">*Illustrative starting fares for design demonstration only. Live prices are not connected.</p>
+    </section>
+
+    <section class="why-section" id="why-us"><div class="section section-inner"><div class="why-copy"><div class="eyebrow">THE AEROLUXE DIFFERENCE</div><h2>Travel should feel<br><em>effortless.</em></h2><p>From your first search to your final arrival, we keep the journey clear, considered and all about you.</p></div><div class="benefits"><article class="benefit"><span class="benefit-icon">✧</span><div><h3>Thoughtful choices</h3><p>Compare your options with a clean, simple search experience.</p></div></article><article class="benefit"><span class="benefit-icon">◷</span><div><h3>Time well spent</h3><p>Keep your trip details together and your planning moving.</p></div></article><article class="benefit"><span class="benefit-icon">♡</span><div><h3>Here for your journey</h3><p>A travel-first experience designed around your next adventure.</p></div></article></div></div></section>
+
+    <section class="newsletter section" id="flight-deals"><div><div class="eyebrow dark-eyebrow">THE OCCASIONAL GOOD EMAIL</div><h2>Good trips begin<br>with <em>good ideas.</em></h2><p>Get destination inspiration and travel notes in your inbox.</p></div><form id="newsletterForm" class="newsletter-form"><label for="email">Your email address</label><div class="email-row"><input id="email" type="email" placeholder="you@example.com" required><button type="submit" aria-label="Subscribe">Join us ↗</button></div><small id="newsletterMessage" aria-live="polite">No spam. Just a little wanderlust.</small></form></section>
+  </main>
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">✦</span><span>Aero<span class="brand-light">Luxe</span></span></a><p>Go further. Feel closer.</p><div class="footer-links"><a href="#flights">Flights</a><a href="#destinations">Destinations</a><a href="#why-us">About</a><a href="mailto:hello@example.com">Contact</a></div><span class="copyright">© 2026 AeroLuxe. Demo website.</span></footer>
+
+  <dialog id="infoDialog" class="info-dialog"><button class="dialog-close" id="closeDialog" aria-label="Close">×</button><div class="eyebrow dark-eyebrow">AEROLUXE</div><h2 id="dialogTitle">Welcome aboard.</h2><p id="dialogText">This is a front-end demonstration. Connect a flight-search API and secure backend to enable real bookings.</p><button class="dialog-action" id="dialogOk">Got it</button></dialog>
+</body>
+</html>
